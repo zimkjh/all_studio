@@ -9,7 +9,6 @@ class PhotoScreen extends StatelessWidget {
       appBar: AppBar(
           backgroundColor: Colors.white,
           shadowColor: Colors.transparent,
-          // leading: const Icon(Icons.arrow_back_ios, color: Colors.black),
           leading: IconButton(
               onPressed: () {
                 Navigator.pop(context);
@@ -26,13 +25,50 @@ class PhotoScreen extends StatelessWidget {
                 ))
           ]),
       body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Go back!'),
-        ),
-      ),
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Expanded(
+              child: Row(
+                children: <Widget>[
+                  const Padding(padding: EdgeInsets.all(5)),
+                  Expanded(
+                    child: Container(
+                      margin: const EdgeInsets.only(left: 10),
+                      decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.white,
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: NetworkImage(
+                                'https://cdn.pixabay.com/photo/2016/11/22/20/11/photography-1850469_1280.jpg'),
+                          )),
+                    ),
+                    flex: 1,
+                  ),
+                  Expanded(
+                    child: Container(
+                      margin: const EdgeInsets.only(left: 15),
+                      child: const Text('찰칵찰칵 스튜디오',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 18)),
+                    ),
+                    flex: 4,
+                  ),
+                  Expanded(
+                      child: Container(
+                        margin: const EdgeInsets.all(15),
+                        child: IconButton(
+                            icon: const Icon(Icons.calendar_today),
+                            onPressed: () => true),
+                      ),
+                      flex: 1)
+                ],
+              ),
+              flex: 1),
+          const Expanded(child: Text('대표사진부분'), flex: 7)
+        ],
+      )),
       backgroundColor: Colors.white,
     );
   }
