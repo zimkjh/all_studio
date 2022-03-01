@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'second.dart';
+import 'photo.dart';
 
 void main() {
   runApp(
@@ -10,7 +10,7 @@ void main() {
         // When navigating to the "/" route, build the HomeScreen widget.
         '/': (context) => const HomeScreen(),
         // When navigating to the "/second" route, build the SecondScreen widget.
-        '/home': (context) => const SecondScreen(),
+        '/photo': (context) => const PhotoScreen(),
       },
     ),
   );
@@ -30,7 +30,7 @@ class HomeScreen extends StatelessWidget {
           // Within the `HomeScreen` widget
           onPressed: () {
             // Navigate to the second screen using a named route.
-            Navigator.pushNamed(context, '/home');
+            Navigator.pushNamed(context, '/photo');
           },
           child: const Text('Launch screen'),
         ),
