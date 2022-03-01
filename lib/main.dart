@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'second.dart';
+import 'photo.dart';
 
 void main() {
   runApp(
@@ -11,7 +11,7 @@ void main() {
         // When navigating to the "/" route, build the HomeScreen widget.
         '/': (context) => HomeScreen(),
         // When navigating to the "/second" route, build the SecondScreen widget.
-        '/home': (context) => const SecondScreen(),
+        '/photo': (context) => const PhotoScreen(),
       },
     ),
   );
