@@ -31,6 +31,12 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         centerTitle: true,
         elevation: 6,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pushNamed(context, '/photo');
+          },
+          icon: const Icon(Icons.photo, color: Colors.black,)
+        ),
         actions: [
           IconButton(
             onPressed: () {},
